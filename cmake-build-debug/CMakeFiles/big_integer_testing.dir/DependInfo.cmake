@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/starcall/CLionProjects/big_integer/big_integer_testing.cpp" "/Users/starcall/CLionProjects/big_integer/cmake-build-debug/CMakeFiles/big_integer_testing.dir/big_integer_testing.cpp.o"
   "/Users/starcall/CLionProjects/big_integer/gtest/gtest-all.cc" "/Users/starcall/CLionProjects/big_integer/cmake-build-debug/CMakeFiles/big_integer_testing.dir/gtest/gtest-all.cc.o"
   "/Users/starcall/CLionProjects/big_integer/gtest/gtest_main.cc" "/Users/starcall/CLionProjects/big_integer/cmake-build-debug/CMakeFiles/big_integer_testing.dir/gtest/gtest_main.cc.o"
+  "/Users/starcall/CLionProjects/big_integer/optimized_vector.cpp" "/Users/starcall/CLionProjects/big_integer/cmake-build-debug/CMakeFiles/big_integer_testing.dir/optimized_vector.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

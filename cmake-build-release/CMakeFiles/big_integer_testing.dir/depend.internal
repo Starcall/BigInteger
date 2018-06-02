@@ -4,13 +4,20 @@
 CMakeFiles/big_integer_testing.dir/big_integer.cpp.o
  /Users/starcall/CLionProjects/big_integer/big_integer.cpp
  /Users/starcall/CLionProjects/big_integer/big_integer.h
+ /Users/starcall/CLionProjects/big_integer/optimized_vector.h
 CMakeFiles/big_integer_testing.dir/big_integer_testing.cpp.o
  ..//gtest/gtest.h
  /Users/starcall/CLionProjects/big_integer/big_integer.h
  /Users/starcall/CLionProjects/big_integer/big_integer_testing.cpp
+ /Users/starcall/CLionProjects/big_integer/optimized_vector.h
 CMakeFiles/big_integer_testing.dir/gtest/gtest-all.cc.o
  ..//gtest/gtest.h
  /Users/starcall/CLionProjects/big_integer/gtest/gtest-all.cc
 CMakeFiles/big_integer_testing.dir/gtest/gtest_main.cc.o
+ ..//big_integer.h
  ..//gtest/gtest.h
+ ../optimized_vector.h
  /Users/starcall/CLionProjects/big_integer/gtest/gtest_main.cc
+CMakeFiles/big_integer_testing.dir/optimized_vector.cpp.o
+ /Users/starcall/CLionProjects/big_integer/optimized_vector.cpp
+ /Users/starcall/CLionProjects/big_integer/optimized_vector.h

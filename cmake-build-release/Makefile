@@ -231,6 +231,33 @@ gtest/gtest_main.cc.s:
 	$(MAKE) -f CMakeFiles/big_integer_testing.dir/build.make CMakeFiles/big_integer_testing.dir/gtest/gtest_main.cc.s
 .PHONY : gtest/gtest_main.cc.s
 
+optimized_vector.o: optimized_vector.cpp.o
+
+.PHONY : optimized_vector.o
+
+# target to build an object file
+optimized_vector.cpp.o:
+	$(MAKE) -f CMakeFiles/big_integer_testing.dir/build.make CMakeFiles/big_integer_testing.dir/optimized_vector.cpp.o
+.PHONY : optimized_vector.cpp.o
+
+optimized_vector.i: optimized_vector.cpp.i
+
+.PHONY : optimized_vector.i
+
+# target to preprocess a source file
+optimized_vector.cpp.i:
+	$(MAKE) -f CMakeFiles/big_integer_testing.dir/build.make CMakeFiles/big_integer_testing.dir/optimized_vector.cpp.i
+.PHONY : optimized_vector.cpp.i
+
+optimized_vector.s: optimized_vector.cpp.s
+
+.PHONY : optimized_vector.s
+
+# target to generate assembly for a file
+optimized_vector.cpp.s:
+	$(MAKE) -f CMakeFiles/big_integer_testing.dir/build.make CMakeFiles/big_integer_testing.dir/optimized_vector.cpp.s
+.PHONY : optimized_vector.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -252,6 +279,9 @@ help:
 	@echo "... gtest/gtest_main.o"
 	@echo "... gtest/gtest_main.i"
 	@echo "... gtest/gtest_main.s"
+	@echo "... optimized_vector.o"
+	@echo "... optimized_vector.i"
+	@echo "... optimized_vector.s"
 .PHONY : help
 
 

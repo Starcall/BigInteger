@@ -4,6 +4,7 @@
 #include <cstdint>
 #include <string>
 #include <vector>
+#include "optimized_vector.h"
 
 using namespace std;
 
@@ -51,9 +52,9 @@ struct big_integer {
 private:
 	void remove_leading_zeros();
 
-	static big_integer add_abs(vector<uint32_t> const& a, vector<uint32_t> const& b);
-	static big_integer sub_abs(vector<uint32_t> const& a, vector<uint32_t> const& b);
-	static big_integer compare_abs(vector<uint32_t> const& a, vector<uint32_t> const& b);
+	static big_integer add_abs(optimized_vector const& a, optimized_vector const& b);
+	static big_integer sub_abs(optimized_vector const& a, optimized_vector const& b);
+	static big_integer compare_abs(optimized_vector const& a, optimized_vector const& b);
 	big_integer mul(uint32_t const& rhs) const;
 
     template<typename FunctorT>
@@ -67,7 +68,7 @@ private:
 	const static uint64_t BASE = static_cast<uint64_t>(UINT32_MAX) + 1;
 
 	int8_t sign;
-	vector<uint32_t> data;
+	optimized_vector data;
 };
 
 big_integer operator+(big_integer a, big_integer const& b);

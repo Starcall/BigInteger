@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+..//big_integer.h
+cstdint
+-
+string
+-
+vector
+-
+optimized_vector.h
+../optimized_vector.h
+
 ..//gtest/gtest.h
 limits
 -
@@ -132,6 +142,16 @@ iosfwd
 vector
 -
 
+../optimized_vector.h
+cstdint
+-
+vector
+-
+memory
+-
+iostream
+-
+
 /Users/starcall/CLionProjects/big_integer/big_integer.cpp
 big_integer.h
 /Users/starcall/CLionProjects/big_integer/big_integer.h
@@ -143,6 +163,10 @@ iostream
 -
 vector
 -
+functional
+-
+optimized_vector.h
+/Users/starcall/CLionProjects/big_integer/optimized_vector.h
 
 /Users/starcall/CLionProjects/big_integer/big_integer.h
 cstdint
@@ -151,6 +175,8 @@ string
 -
 vector
 -
+optimized_vector.h
+/Users/starcall/CLionProjects/big_integer/optimized_vector.h
 
 /Users/starcall/CLionProjects/big_integer/big_integer_testing.cpp
 algorithm
@@ -338,5 +364,21 @@ string
 stdio.h
 -
 gtest/gtest.h
+-
+big_integer.h
+-
+
+/Users/starcall/CLionProjects/big_integer/optimized_vector.cpp
+optimized_vector.h
+/Users/starcall/CLionProjects/big_integer/optimized_vector.h
+
+/Users/starcall/CLionProjects/big_integer/optimized_vector.h
+cstdint
+-
+vector
+-
+memory
+-
+iostream
 -
 

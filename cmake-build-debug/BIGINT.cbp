@@ -102,6 +102,12 @@
 		<Unit filename="/Users/starcall/CLionProjects/big_integer/gtest/gtest_main.cc">
 			<Option target="big_integer_testing"/>
 		</Unit>
+		<Unit filename="/Users/starcall/CLionProjects/big_integer/optimized_vector.cpp">
+			<Option target="big_integer_testing"/>
+		</Unit>
+		<Unit filename="/Users/starcall/CLionProjects/big_integer/optimized_vector.h">
+			<Option target="big_integer_testing"/>
+		</Unit>
 		<Unit filename="/Users/starcall/CLionProjects/big_integer/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

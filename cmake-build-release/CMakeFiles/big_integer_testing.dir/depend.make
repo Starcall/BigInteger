@@ -3,14 +3,21 @@
 
 CMakeFiles/big_integer_testing.dir/big_integer.cpp.o: ../big_integer.cpp
 CMakeFiles/big_integer_testing.dir/big_integer.cpp.o: ../big_integer.h
+CMakeFiles/big_integer_testing.dir/big_integer.cpp.o: ../optimized_vector.h
 
 CMakeFiles/big_integer_testing.dir/big_integer_testing.cpp.o: ../gtest/gtest.h
 CMakeFiles/big_integer_testing.dir/big_integer_testing.cpp.o: ../big_integer.h
 CMakeFiles/big_integer_testing.dir/big_integer_testing.cpp.o: ../big_integer_testing.cpp
+CMakeFiles/big_integer_testing.dir/big_integer_testing.cpp.o: ../optimized_vector.h
 
 CMakeFiles/big_integer_testing.dir/gtest/gtest-all.cc.o: ../gtest/gtest.h
 CMakeFiles/big_integer_testing.dir/gtest/gtest-all.cc.o: ../gtest/gtest-all.cc
 
+CMakeFiles/big_integer_testing.dir/gtest/gtest_main.cc.o: ../big_integer.h
 CMakeFiles/big_integer_testing.dir/gtest/gtest_main.cc.o: ../gtest/gtest.h
+CMakeFiles/big_integer_testing.dir/gtest/gtest_main.cc.o: ../optimized_vector.h
 CMakeFiles/big_integer_testing.dir/gtest/gtest_main.cc.o: ../gtest/gtest_main.cc
+
+CMakeFiles/big_integer_testing.dir/optimized_vector.cpp.o: ../optimized_vector.cpp
+CMakeFiles/big_integer_testing.dir/optimized_vector.cpp.o: ../optimized_vector.h
 

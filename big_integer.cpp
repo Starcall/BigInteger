@@ -5,11 +5,12 @@
 #include <iostream>
 #include <vector>
 #include <functional>
+#include "optimized_vector.h"
 
 using namespace std;
 
 big_integer::big_integer() {
-	data = vector<uint32_t>(0);
+	data = optimized_vector(0);
 	sign = 0;
 }
 
@@ -20,7 +21,7 @@ big_integer::big_integer(big_integer const &other) {
 
 big_integer::big_integer(int a) : big_integer() {
 	if (a != 0) {
-		data = vector<uint32_t>(1);
+		data = optimized_vector(1);
 		if (a > 0) {
 			sign = 1;
 			data[0] = static_cast<uint32_t>(a);
@@ -153,7 +154,7 @@ big_integer & big_integer::operator/=(big_integer const & rhs) {
 	size_t n = B.data.size();
 	size_t m = A.data.size() - n;
 	B <<= static_cast<int>(m * 32);
-	vector<uint32_t> q(m);
+	optimized_vector q(m);
 	if (compare_abs(A.data, B.data).sign >= 0) {
 		q.push_back(1);
 		A -= B;
@@ -194,11 +195,11 @@ big_integer& big_integer::apply_unary(big_integer const & b, FunctorT functor) {
     this->to_twos_complement();
     tmp.to_twos_complement();
 
-    std::transform(this->data.begin(), this->data.begin() + std::min(tmp.data.size(), this->data.size()), tmp.data.begin(), this->data.begin(), functor);
-   /* for (size_t i = 0; i < std::min(tmp.data.size(), this->data.size()); i++) {
+    //std::transform(this->data.begin(), this->data.begin() + std::min(tmp.data.size(), this->data.size()), tmp.data.begin(), this->data.begin(), functor);
+    for (size_t i = 0; i < std::min(tmp.data.size(), this->data.size()); i++) {
         this->data[i] =  functor(this->data[i], tmp.data[i]);
     }
-*/
+
     this->from_twos_complement();
     this->remove_leading_zeros();
     return *this;
@@ -224,7 +225,7 @@ big_integer & big_integer::operator<<=(int rhs) {
 	if (rhs < 0) return (*this >>= rhs);
 	uint32_t digits = static_cast<uint32_t>(rhs) / 32;
 	uint32_t mod = static_cast<uint32_t>(rhs) % 32;
-	vector<uint32_t> tmp;
+	optimized_vector tmp;
 
 	this->to_twos_complement();
 
@@ -238,7 +239,7 @@ big_integer & big_integer::operator<<=(int rhs) {
 		tmp = this->data;
 	}
 
-	this->data = vector<uint32_t>();
+	this->data = optimized_vector();
 	for (size_t i = 0; i < digits; i++) {
 		this->data.push_back(0);
 	}
@@ -258,7 +259,7 @@ big_integer & big_integer::operator>>=(int rhs) {
 	if (rhs < 0) return (*this <<= rhs);
 	uint32_t digits = static_cast<uint32_t>(rhs) / 32;
 	uint32_t mod = static_cast<uint32_t>(rhs) % 32;
-	vector<uint32_t> tmp;
+	optimized_vector tmp;
 
 	this->to_twos_complement();
 
@@ -279,7 +280,7 @@ big_integer & big_integer::operator>>=(int rhs) {
 		tmp = this->data;
 	}
 
-	this->data = vector<uint32_t>();
+	this->data = optimized_vector();
 	for (size_t i = digits; i < tmp.size(); i++) {
 		this->data.push_back(tmp[i]);
 	}
@@ -337,7 +338,7 @@ inline void big_integer::remove_leading_zeros() {
 	}
 }
 
-big_integer big_integer::add_abs(vector<uint32_t> const& a, vector<uint32_t> const& b) {
+big_integer big_integer::add_abs(optimized_vector const& a, optimized_vector const& b) {
 	size_t max_size = std::max(a.size(), b.size());
 	big_integer c;
 	c.data.resize(max_size);
@@ -354,7 +355,7 @@ big_integer big_integer::add_abs(vector<uint32_t> const& a, vector<uint32_t> con
 	return c;
 }
 
-big_integer big_integer::sub_abs(vector<uint32_t> const& a, vector<uint32_t> const& b) {
+big_integer big_integer::sub_abs(optimized_vector const& a, optimized_vector const& b) {
 	big_integer c = compare_abs(a, b);
 	if (c.sign < 0) {
 		c.data = compare_abs(b, a).data;
@@ -362,7 +363,7 @@ big_integer big_integer::sub_abs(vector<uint32_t> const& a, vector<uint32_t> con
 	return c;
 }
 
-big_integer big_integer::compare_abs(vector<uint32_t> const& a, vector<uint32_t> const& b) {
+big_integer big_integer::compare_abs(optimized_vector const& a, optimized_vector const& b) {
 	size_t max_size = std::max(a.size(), b.size());
 	big_integer c;
 	c.data.resize(max_size);
